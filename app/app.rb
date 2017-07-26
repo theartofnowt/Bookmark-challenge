@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = "development"
+
 require 'sinatra/base'
 require_relative 'models/link.rb'
 
@@ -7,7 +9,6 @@ class BookmarkManager < Sinatra::Base
     @links = Link.all
     erb :links
   end
-
 
   get '/links/new' do
     erb :new
