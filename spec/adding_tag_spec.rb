@@ -6,9 +6,7 @@ feature 'creating links' do
     fill_in 'title', with: 'Google'
     fill_in 'tags', with: 'my life'
     click_button 'submit'
-
     link = Link.first
-    # within 'ul#links' do
     expect(link.tags.map(&:name)).to include('my life')
   end
 end
