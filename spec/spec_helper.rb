@@ -14,6 +14,10 @@ Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
 
+  DataMapper.setup(:default,'postgres://localhost/bookmark_manager_test')
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
+
   config.before(:suite)do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
