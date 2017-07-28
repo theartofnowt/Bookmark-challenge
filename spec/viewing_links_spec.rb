@@ -9,10 +9,10 @@ feature 'Viewing links' do
 
   scenario 'we can filter link by tag' do
     Link.create(url: 'http://www.zombo.com', title: 'This is Zombocom', tags: [Tag.first_or_create(name: 'education')])
-    visit '/tag/education'
-    expect(page.code_status).to eq 200
+    visit '/tags/education'
+    expect(page.status_code).to eq 200
     within 'ul#links' do
-      expect(page).to have_content('This is Zombocom')
+    expect(page).to have_content('This is Zombocom')
     end
   end
 
