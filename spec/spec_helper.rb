@@ -9,6 +9,7 @@ require 'database_cleaner'
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require_relative '../app/app.rb'
+require 'web_helper'
 
 Capybara.app = BookmarkManager
 
